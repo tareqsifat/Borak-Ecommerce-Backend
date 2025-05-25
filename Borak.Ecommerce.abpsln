@@ -1,0 +1,53 @@
+{
+  "id": "2aae27c8-0361-4231-b9b1-32b61e67cec6",
+  "template": "app",
+  "versions": {
+    "AbpFramework": "9.1.1",
+    "AbpStudio": "0.9.26",
+    "TargetDotnetFramework": "net9.0"
+  },
+  "modules": {
+    "Borak.Ecommerce": {
+      "path": "Borak.Ecommerce.abpmdl"
+    }
+  },
+  "runProfiles": {
+    "Default": {
+      "path": "etc/abp-studio/run-profiles/Default.abprun.json"
+    }
+  },
+  "options": {
+    "httpRequests": {
+      "ignoredUrls": [
+      
+      ]
+    }
+  },
+  "creatingStudioConfiguration": {
+    "template": "app",
+    "createdAbpStudioVersion": "0.9.26",
+    "tiered": "false",
+    "runInstallLibs": "true",
+    "useLocalReferences": "false",
+    "multiTenancy": "true",
+    "includeTests": "true",
+    "kubernetesConfiguration": "false",
+    "uiFramework": "angular",
+    "mobileFramework": "none",
+    "distributedEventBus": "none",
+    "databaseProvider": "ef",
+    "runDbMigrator": "true",
+    "databaseManagementSystem": "sqlserver",
+    "separateTenantSchema": "false",
+    "createInitialMigration": "true",
+    "theme": "basic",
+    "themeStyle": "",
+    "themeMenuPlacement": "",
+    "mobileFramework": "none",
+    "progressiveWebApp": "false",
+    "runProgressiveWebAppSupport": "false",
+    "publicWebsite": "false",
+    "socialLogin": "true",
+    "createCommand": "abp new Borak.Ecommerce -t app --ui-framework angular --database-provider ef --database-management-system sqlserver --theme basic --without-cms-kit --dont-run-bundling -no-file-management"
+  }
+}
