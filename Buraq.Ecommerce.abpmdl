@@ -1,0 +1,101 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.BasicTheme": {
+      "version": "9.1.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.Account": {
+      "version": "9.1.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "9.1.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity": {
+      "version": "9.1.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "9.1.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "9.1.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.PermissionManagement": {
+      "version": "9.1.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "9.1.1",
+      "isInstalled": true
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "Buraq.Ecommerce.Application": {
+      "path": "src/Buraq.Ecommerce.Application/Buraq.Ecommerce.Application.abppkg",
+      "folder": "src"
+    },
+    "Buraq.Ecommerce.Application.Tests": {
+      "path": "test/Buraq.Ecommerce.Application.Tests/Buraq.Ecommerce.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "Buraq.Ecommerce.Domain.Shared": {
+      "path": "src/Buraq.Ecommerce.Domain.Shared/Buraq.Ecommerce.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "Buraq.Ecommerce.Application.Contracts": {
+      "path": "src/Buraq.Ecommerce.Application.Contracts/Buraq.Ecommerce.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "Buraq.Ecommerce.HttpApi": {
+      "path": "src/Buraq.Ecommerce.HttpApi/Buraq.Ecommerce.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "Buraq.Ecommerce.HttpApi.Client": {
+      "path": "src/Buraq.Ecommerce.HttpApi.Client/Buraq.Ecommerce.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "Buraq.Ecommerce.EntityFrameworkCore.Tests": {
+      "path": "test/Buraq.Ecommerce.EntityFrameworkCore.Tests/Buraq.Ecommerce.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "Buraq.Ecommerce.EntityFrameworkCore": {
+      "path": "src/Buraq.Ecommerce.EntityFrameworkCore/Buraq.Ecommerce.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "Buraq.Ecommerce.TestBase": {
+      "path": "test/Buraq.Ecommerce.TestBase/Buraq.Ecommerce.TestBase.abppkg",
+      "folder": "test"
+    },
+    "Buraq.Ecommerce.Domain.Tests": {
+      "path": "test/Buraq.Ecommerce.Domain.Tests/Buraq.Ecommerce.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "Buraq.Ecommerce.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Buraq.Ecommerce.HttpApi.Client.ConsoleTestApp/Buraq.Ecommerce.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "Buraq.Ecommerce.DbMigrator": {
+      "path": "src/Buraq.Ecommerce.DbMigrator/Buraq.Ecommerce.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "Buraq.Ecommerce.HttpApi.Host": {
+      "path": "src/Buraq.Ecommerce.HttpApi.Host/Buraq.Ecommerce.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "Buraq.Ecommerce.Domain": {
+      "path": "src/Buraq.Ecommerce.Domain/Buraq.Ecommerce.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}
