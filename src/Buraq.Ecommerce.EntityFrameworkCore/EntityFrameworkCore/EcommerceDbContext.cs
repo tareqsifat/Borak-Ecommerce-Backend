@@ -14,6 +14,9 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using Buraq.Ecommerce.Products;
+using Buraq.Ecommerce.Suppliers;
+using Buraq.Ecommerce.Categories;
 
 namespace Buraq.Ecommerce.EntityFrameworkCore;
 
@@ -26,7 +29,6 @@ public class EcommerceDbContext :
     IIdentityDbContext
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
-
 
     #region Entities from the modules
 
@@ -55,6 +57,14 @@ public class EcommerceDbContext :
     public DbSet<Tenant> Tenants { get; set; }
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
+
+    // Product
+    public DbSet<Product> Products { get; set; }
+    // Category
+    public DbSet<Category> Categories { get; set; }
+    //Supplier
+    public DbSet<Supplier> Suppliers { get; set; }
+
     #endregion
 
     public EcommerceDbContext(DbContextOptions<EcommerceDbContext> options)
@@ -78,7 +88,7 @@ public class EcommerceDbContext :
         builder.ConfigureOpenIddict();
         builder.ConfigureTenantManagement();
         builder.ConfigureBlobStoring();
-        
+
         /* Configure your own tables/entities inside here */
 
         //builder.Entity<YourEntity>(b =>
@@ -87,5 +97,37 @@ public class EcommerceDbContext :
         //    b.ConfigureByConvention(); //auto configure for the base class props
         //    //...
         //});
+
+
+        builder.Entity<Product>(b =>
+        {
+            b.ToTable(EcommerceConsts.DbTablePrefix + "Products", EcommerceConsts.DbSchema);
+            b.ConfigureByConvention();
+
+            b.Property(p => p.Id)
+           .ValueGeneratedOnAdd()
+           .UseIdentityColumn();
+        });
+
+        builder.Entity<Category>(b =>
+        {
+            b.ToTable(EcommerceConsts.DbTablePrefix + "Categories", EcommerceConsts.DbSchema);
+            b.ConfigureByConvention();
+
+
+            b.Property(p => p.Id)
+           .ValueGeneratedOnAdd()
+           .UseIdentityColumn();
+        });
+
+        builder.Entity<Supplier>(b =>
+        {
+            b.ToTable(EcommerceConsts.DbTablePrefix + "Suppliers", EcommerceConsts.DbSchema);
+            b.ConfigureByConvention();
+
+            b.Property(p => p.Id)
+           .ValueGeneratedOnAdd()
+           .UseIdentityColumn();
+        });
     }
 }
