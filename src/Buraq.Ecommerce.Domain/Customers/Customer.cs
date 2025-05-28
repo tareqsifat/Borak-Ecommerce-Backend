@@ -17,7 +17,6 @@ namespace Buraq.Ecommerce.Customers
         public string Phone { get; set; }
         public int AddressId { get; set; }
         public Address Address { get; set; }
-        public ICollection<Cart> Carts { get; set; }
 
         public Customer(
             int id,
@@ -31,7 +30,6 @@ namespace Buraq.Ecommerce.Customers
             Email = email;
             Phone = phone;
             AddressId = addressId;
-            Carts = new List<Cart>();
         }
     }
 
