@@ -17,6 +17,14 @@ using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using Buraq.Ecommerce.Products;
 using Buraq.Ecommerce.Suppliers;
 using Buraq.Ecommerce.Categories;
+using Buraq.Ecommerce.Addresses;
+using Buraq.Ecommerce.Carts;
+using Buraq.Ecommerce.CartItems;
+using Buraq.Ecommerce.Customers;
+using Buraq.Ecommerce.Orders;
+using Buraq.Ecommerce.OrderItems;
+using Buraq.Ecommerce.Shipments;
+using Buraq.Ecommerce.Payments;
 
 namespace Buraq.Ecommerce.EntityFrameworkCore;
 
@@ -57,12 +65,20 @@ public class EcommerceDbContext :
     public DbSet<Tenant> Tenants { get; set; }
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
+    #endregion
 
-    // Product
-    public DbSet<Product> Products { get; set; }
-    // Category
+    #region Entities from the application domain
+
+    public DbSet<Address> Addresses { get; set; }
+    public DbSet<Cart> Carts { get; set; }
+    public DbSet<CartItem> CartItems { get; set; }
     public DbSet<Category> Categories { get; set; }
-    //Supplier
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderItem> OrderItems { get; set; }
+    public DbSet<Payment> Payments { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Shipment> Shipments { get; set; }
     public DbSet<Supplier> Suppliers { get; set; }
 
     #endregion
@@ -98,36 +114,7 @@ public class EcommerceDbContext :
         //    //...
         //});
 
-
-        builder.Entity<Product>(b =>
-        {
-            b.ToTable(EcommerceConsts.DbTablePrefix + "Products", EcommerceConsts.DbSchema);
-            b.ConfigureByConvention();
-
-            b.Property(p => p.Id)
-           .ValueGeneratedOnAdd()
-           .UseIdentityColumn();
-        });
-
-        builder.Entity<Category>(b =>
-        {
-            b.ToTable(EcommerceConsts.DbTablePrefix + "Categories", EcommerceConsts.DbSchema);
-            b.ConfigureByConvention();
-
-
-            b.Property(p => p.Id)
-           .ValueGeneratedOnAdd()
-           .UseIdentityColumn();
-        });
-
-        builder.Entity<Supplier>(b =>
-        {
-            b.ToTable(EcommerceConsts.DbTablePrefix + "Suppliers", EcommerceConsts.DbSchema);
-            b.ConfigureByConvention();
-
-            b.Property(p => p.Id)
-           .ValueGeneratedOnAdd()
-           .UseIdentityColumn();
-        });
+        //Configure your here
+        builder.ConfigureEntities();
     }
 }
