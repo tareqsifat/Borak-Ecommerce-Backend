@@ -81,6 +81,11 @@ namespace Buraq.Ecommerce.EntityFrameworkCore
                 b.Property(p => p.Id)
                    .ValueGeneratedOnAdd()
                    .UseIdentityColumn();
+
+                b.HasOne(o => o.Customer)
+                    .WithMany()
+                    .HasForeignKey(o => o.CustomerId)
+                    .OnDelete(DeleteBehavior.Restrict);
             });
 
             builder.Entity<OrderItem>(b =>
