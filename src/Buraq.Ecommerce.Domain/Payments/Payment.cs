@@ -24,14 +24,14 @@ namespace Buraq.Ecommerce.Payments
             DateTime paymentDate,
             decimal amount,
             string paymentMethod,
-            string paymentStatus
+            PaymentStatus Status
         ) : base(id)
         {
             OrderId = orderId;
             PaymentDate = paymentDate;
             Amount = amount;
             PaymentMethod = paymentMethod;
-            PaymentStatus = paymentStatus;
+            Status = Status;
         }
     }
 

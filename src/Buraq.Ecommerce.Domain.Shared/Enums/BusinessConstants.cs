@@ -8,19 +8,20 @@ namespace Buraq.Ecommerce.Enums
 {
     public enum PaymentStatus
     {
-        Pending,
-        Completed,
-        Failed,
-        Refunded
+        Pending = 1,
+        Completed = 2,
+        Failed = 3,
+        Refunded = 4,
+        PartiallyRefunded = 5
     }
 
     public enum ShipmentStatus
     {
-        Pending,
-        Processing,
-        Shipped,
-        Delivered,
-        Cancelled
+        Pending = 1,
+        Processing = 2,
+        Shipped = 3,
+        Delivered = 4,
+        Cancelled = 5
     }
 
     public enum OrderStatus
