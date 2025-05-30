@@ -7,6 +7,7 @@ using Buraq.Ecommerce.OrderItems;
 using Buraq.Ecommerce.Orders;
 using Buraq.Ecommerce.Payments;
 using Buraq.Ecommerce.Products;
+using Buraq.Ecommerce.ShipmentItems;
 using Buraq.Ecommerce.Shipments;
 using Buraq.Ecommerce.Suppliers;
 using Microsoft.EntityFrameworkCore;
@@ -121,6 +122,21 @@ namespace Buraq.Ecommerce.EntityFrameworkCore
             builder.Entity<Shipment>(b =>
             {
                 b.ToTable(EcommerceConsts.DbTablePrefix + "Shipments", EcommerceConsts.DbSchema);
+                b.ConfigureByConvention();
+
+                b.Property(p => p.Id)
+                   .ValueGeneratedOnAdd()
+                   .UseIdentityColumn();
+
+                b.HasMany(s => s.Items)
+                    .WithOne(si => si.Shipment)
+                    .HasForeignKey(si => si.ShipmentId)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            builder.Entity<ShipmentItem>(b =>
+            {
+                b.ToTable(EcommerceConsts.DbTablePrefix + "ShipmentItems", EcommerceConsts.DbSchema);
                 b.ConfigureByConvention();
 
                 b.Property(p => p.Id)

@@ -25,6 +25,7 @@ using Buraq.Ecommerce.Orders;
 using Buraq.Ecommerce.OrderItems;
 using Buraq.Ecommerce.Shipments;
 using Buraq.Ecommerce.Payments;
+using Buraq.Ecommerce.ShipmentItems;
 
 namespace Buraq.Ecommerce.EntityFrameworkCore;
 
@@ -79,6 +80,7 @@ public class EcommerceDbContext :
     public DbSet<Payment> Payments { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<Shipment> Shipments { get; set; }
+    public DbSet<ShipmentItem> ShipmentItems { get; set; }
     public DbSet<Supplier> Suppliers { get; set; }
 
     #endregion
