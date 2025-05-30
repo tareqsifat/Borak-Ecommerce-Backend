@@ -12,16 +12,17 @@ namespace Buraq.Ecommerce.OrderItems
 {
     public class OrderItem : FullAuditedAggregateRoot<int>
     {
-        public Guid OrderId { get; set; }
+        public int OrderId { get; set; }
         public Order Order { get; set; }
-        public Guid ProductId { get; set; }
+        public int ProductId { get; set; }
         public Product Product { get; set; }
         public int Quantity { get; set; }
+        public decimal UnitPrice { get; set; }
 
         public OrderItem(
             int id,
-            Guid orderId,
-            Guid productId,
+            int orderId,
+            int productId,
             int quantity
         ) : base(id)
         {

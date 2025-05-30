@@ -1,5 +1,6 @@
 ﻿using Buraq.Ecommerce.Addresses;
 using Buraq.Ecommerce.Customers;
+using Buraq.Ecommerce.Enums;
 using Buraq.Ecommerce.OrderItems;
 using Buraq.Ecommerce.Payments;
 using Buraq.Ecommerce.Shipments;
@@ -20,6 +21,7 @@ namespace Buraq.Ecommerce.Orders
         public int ShippingAddressId { get; set; }
         public Address ShippingAddress { get; set; }
         public decimal TotalAmount { get; set; }
+        public OrderStatus Status { get; set; }
         public ICollection<OrderItem> OrderItems { get; set; }
         public ICollection<Shipment> Shipments { get; set; }
         public ICollection<Payment> Payments { get; set; }

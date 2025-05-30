@@ -1,4 +1,5 @@
-﻿using Buraq.Ecommerce.Orders;
+﻿using Buraq.Ecommerce.Enums;
+using Buraq.Ecommerce.Orders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Buraq.Ecommerce.Payments
         public DateTime PaymentDate { get; set; }
         public decimal Amount { get; set; }
         public string PaymentMethod { get; set; }
-        public string PaymentStatus { get; set; }
+        public PaymentStatus Status { get; set; }
 
         public Payment(
             int id,

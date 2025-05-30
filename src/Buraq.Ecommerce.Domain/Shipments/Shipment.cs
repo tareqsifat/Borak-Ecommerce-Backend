@@ -1,4 +1,6 @@
-﻿using Buraq.Ecommerce.Orders;
+﻿using Buraq.Ecommerce.Enums;
+using Buraq.Ecommerce.Orders;
+using Buraq.Ecommerce.ShipmentItems;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +17,8 @@ namespace Buraq.Ecommerce.Shipments
         public DateTime ShipmentDate { get; set; }
         public string Carrier { get; set; }
         public string TrackingNumber { get; set; }
-        public string ShipmentStatus { get; set; }
+        public ShipmentStatus Status { get; set; }
+        public ICollection<ShipmentItem> Items { get; set; }
 
         public Shipment(
             int id,
@@ -23,14 +26,14 @@ namespace Buraq.Ecommerce.Shipments
             DateTime shipmentDate,
             string carrier,
             string trackingNumber,
-            string shipmentStatus
+            ShipmentStatus status
         ) : base(id)
         {
             OrderId = orderId;
             ShipmentDate = shipmentDate;
             Carrier = carrier;
             TrackingNumber = trackingNumber;
-            ShipmentStatus = shipmentStatus;
+            Status = status;
         }
     }
 
