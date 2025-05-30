@@ -22,7 +22,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="Shipments\Interfaces\" />
     <Folder Include="Suppliers\Interfaces\" />
   </ItemGroup>
 
