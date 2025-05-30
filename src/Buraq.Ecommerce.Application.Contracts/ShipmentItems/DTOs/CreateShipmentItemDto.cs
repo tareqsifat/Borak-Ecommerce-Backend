@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Buraq.Ecommerce.Orders.DTOs
+namespace Buraq.Ecommerce.ShipmentItems.DTOs
 {
-    public class OrderItemCreateDto
+    public class CreateShipmentItemDto
     {
-        public int ProductId { get; set; }
+        public int ShipmentId { get; set; }
+        public int OrderItemId { get; set; }
         public int Quantity { get; set; }
     }
 }

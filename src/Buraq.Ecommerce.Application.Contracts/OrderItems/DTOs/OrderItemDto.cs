@@ -11,8 +11,8 @@ namespace Buraq.Ecommerce.OrderItems.DTOs
 {
     public class OrderItemDto : FullAuditedEntityDto<int>
     {
-        public Guid OrderId { get; set; }
-        public Guid ProductId { get; set; }
+        public int OrderId { get; set; }
+        public int ProductId { get; set; }
         public int Quantity { get; set; }
         public DateTime CreationTime { get; set; }
         public DateTime? LastModificationTime { get; set; }
