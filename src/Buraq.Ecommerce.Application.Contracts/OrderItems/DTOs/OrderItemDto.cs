@@ -14,8 +14,6 @@ namespace Buraq.Ecommerce.OrderItems.DTOs
         public int Quantity { get; set; }
         public DateTime CreationTime { get; set; }
         public DateTime? LastModificationTime { get; set; }
-
-        // Navigation properties
         public ProductDto Product { get; set; }
         public OrderDto Order { get; set; }
     }

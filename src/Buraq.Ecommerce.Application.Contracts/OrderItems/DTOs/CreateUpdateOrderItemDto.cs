@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Buraq.Ecommerce.OrderItems.DTOs
 {
-    internal class CreateUpdateOrderItemDto
+    public class CreateUpdateOrderItemDto
     {
+        public Guid OrderId { get; set; }
+        public Guid ProductId { get; set; }
+        public int Quantity { get; set; }
     }
 }
