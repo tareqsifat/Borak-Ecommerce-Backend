@@ -22,7 +22,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="ShipmentItems\DTOs\" />
+    <Folder Include="ShipmentItems\Interfaces\" />
   </ItemGroup>
 
 </Project>

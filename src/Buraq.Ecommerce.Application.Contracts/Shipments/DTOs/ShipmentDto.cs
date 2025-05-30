@@ -1,5 +1,6 @@
 ﻿using Buraq.Ecommerce.Enums;
 using Buraq.Ecommerce.Orders.DTOs;
+using Buraq.Ecommerce.ShipmentItems.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;

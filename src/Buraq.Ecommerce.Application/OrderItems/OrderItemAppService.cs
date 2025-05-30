@@ -18,13 +18,13 @@ namespace Buraq.Ecommerce.OrderItems
     public class OrderItemAppService : ApplicationService, IOrderItemAppService
     {
         private readonly IRepository<OrderItem, int> _orderItemRepository;
-        private readonly IRepository<Product, Guid> _productRepository;
-        private readonly IRepository<Order, Guid> _orderRepository;
+        private readonly IRepository<Product, int> _productRepository;
+        private readonly IRepository<Order, int> _orderRepository;
 
         public OrderItemAppService(
             IRepository<OrderItem, int> orderItemRepository,
-            IRepository<Product, Guid> productRepository,
-            IRepository<Order, Guid> orderRepository)
+            IRepository<Product, int> productRepository,
+            IRepository<Order, int> orderRepository)
         {
             _orderItemRepository = orderItemRepository;
             _productRepository = productRepository;
@@ -37,7 +37,7 @@ namespace Buraq.Ecommerce.OrderItems
             return ObjectMapper.Map<OrderItem, OrderItemDto>(orderItem);
         }
 
-        public async Task<List<OrderItemDto>> GetByOrderIdAsync(Guid orderId)
+        public async Task<List<OrderItemDto>> GetByOrderIdAsync(int orderId)
         {
             var queryable = await _orderItemRepository.GetQueryableAsync();
             var orderItems = await AsyncExecuter.ToListAsync(
@@ -127,12 +127,12 @@ namespace Buraq.Ecommerce.OrderItems
             await _orderItemRepository.DeleteAsync(id);
         }
 
-        public async Task DeleteByOrderAsync(Guid orderId)
+        public async Task DeleteByOrderAsync(int orderId)
         {
             await _orderItemRepository.DeleteAsync(oi => oi.OrderId == orderId);
         }
 
-        public async Task<int> GetCountForOrderAsync(Guid orderId)
+        public async Task<int> GetCountForOrderAsync(int orderId)
         {
             return await _orderItemRepository.CountAsync(oi => oi.OrderId == orderId);
         }
