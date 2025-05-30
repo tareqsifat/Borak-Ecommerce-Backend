@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Buraq.Ecommerce.Addresses.DTOs
+{
+    public class CreateUpdateAddressDto 
+    {
+        public string Name { get; set; }
+        public string Street { get; set; }
+        public string Country { get; set; }
+    }
+}
