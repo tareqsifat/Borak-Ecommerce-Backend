@@ -7,12 +7,10 @@ using Volo.Abp.Application.Dtos;
 
 namespace Buraq.Ecommerce.Suppliers.DTOs
 {
-    public class SupplierDto : FullAuditedEntityDto<int>
+    public class SupplierFilterDto : PagedAndSortedResultRequestDto
     {
         public string Name { get; set; }
         public string ContactEmail { get; set; }
         public string PhoneNumber { get; set; }
-        public DateTime CreationTime { get; set; }
-        public DateTime? LastModificationTime { get; set; }
     }
 }
