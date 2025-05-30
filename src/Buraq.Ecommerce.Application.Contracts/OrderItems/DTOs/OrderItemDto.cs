@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Buraq.Ecommerce.Orders.DTOs;
+using Buraq.Ecommerce.Products.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
